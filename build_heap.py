@@ -34,7 +34,7 @@ def main():
         path="/home/runner/work/convert-array-into-heap-KristiansPriede221RDB394/convert-array-into-heap-KristiansPriede221RDB394/tests/"
         ptf=path+fname
         with open (ptf,'r')as file:
-            line=file.readline()
+            line=file.readlines()
             n=int(line[0])
             data=list(map(int,line[1].split(' ')))
 
