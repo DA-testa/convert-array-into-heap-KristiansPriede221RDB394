@@ -2,13 +2,18 @@
 
 
 def build_heap(data):
-    swaps = []
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
-
-
-    return swaps
-
+    n=len(data)
+    swaps=[]
+    for i in range(n//2,-1,-1):
+        while True:    
+            val=2*i+1
+            if val>=len(data) or data[i]<data[val]:
+                break
+            if val+1<len(data)and data[val]>data[val+1]:
+                val=val+1
+            swaps.append([i,val])
+            data[val],data[i]=data[i],data[val]         
+    return swaps      
 
 def main():
     
@@ -18,11 +23,19 @@ def main():
 
 
     # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
-
-    # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
+    check=input()
+    if(check.startswith("I")):
+        n = int(input())
+        data = list(map(int, input().split()))
+        assert len(data) == n
+    if(check.startswith("F")):
+        fname=input()
+        path="/home/runner/work/convert-array-into-heap-KristiansPriede221RDB394/convert-array-into-heap-KristiansPriede221RDB394/build_heap.py/"    
+        ptf=path+fname
+        with open (ptf,'r')as file:
+            line=file.readline()
+            n=int(line[0])
+            data=list(map(int,line[1].split(' ')))
 
     # calls function to assess the data 
     # and give back all swaps
@@ -34,8 +47,9 @@ def main():
 
     # output all swaps
     print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+    if(len(swaps)<=109):   
+        for i,j in swaps:
+            print(i,j)
 
 
 if __name__ == "__main__":
