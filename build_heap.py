@@ -31,7 +31,7 @@ def main():
         assert len(data) == n
     if(check.startswith("F")):
         fname=input()
-        path="/home/runner/work/convert-array-into-heap-KristiansPriede221RDB394/convert-array-into-heap-KristiansPriede221RDB394/build_heap.py/"    
+        path="/home/runner/work/convert-array-into-heap-KristiansPriede221RDB394/convert-array-into-heap-KristiansPriede221RDB394/tests/"
         ptf=path+fname
         with open (ptf,'r')as file:
             line=file.readline()
