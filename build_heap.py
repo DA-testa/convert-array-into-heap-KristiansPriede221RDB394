@@ -11,7 +11,7 @@ def build_heap(data):
                 break
             if val+1<len(data)and data[val]>data[val+1]:
                 val=val+1
-            swaps.append([val,i])
+            swaps.append([i,val])
             data[val],data[i]=data[i],data[val] 
             i=val        
     return swaps      
